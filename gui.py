@@ -112,8 +112,11 @@ class AutoHolderWindow(QWidget):
         self._holder.key_captured.connect(self._on_key_captured)
         self.start_stop_btn.clicked.connect(self._toggle_start_stop)
 
+    # Update the display to reflect the current state
     def _on_running_changed(self, running):
-        self.start_stop_btn.setText("Stop" if running else "Start")
+        self.start_stop_btn.setText("Running!" if running else "Stopped")
+        color = "green" if running else "red"
+        self.start_stop_btn.setStyleSheet(f"background-color: {color}; color: white;")
 
     def _toggle_start_stop(self):
         self._holder.toggle()
