@@ -84,15 +84,15 @@ class AutoHolderWindow(QWidget):
         self.msg_label.setWordWrap(True)
         self.msg_label.setStyleSheet("color: #cc0000; font-size: 11px;")
         
-        # Set the background color of the message label to black
-        self.msg_label.setStyleSheet("background-color: #000000; color: #cc0000; font-size: 11px;")
+        # Set the color of the message label to black
+        self.msg_label.setStyleSheet("color: #cc0000; font-size: 11px;")
 
         self.status_label = QLabel()
         self.status_label.setStyleSheet("color: gray; font-size: 11px;")
         self.status_label.setAlignment(Qt.AlignCenter)
         
-        # Set the background color of the status label to black
-        self.status_label.setStyleSheet("background-color: #000000; color: gray; font-size: 11px;")
+        # Set the color of the status label to black
+        self.status_label.setStyleSheet("color: gray; font-size: 11px;")
 
         admin_hint = QLabel(
             "If the keys aren't working in-game, try running this program as an Administrator."

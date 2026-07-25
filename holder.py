@@ -18,6 +18,7 @@ class KeyHolder(QObject):
         self._lock = Lock()
         self._capturing = False
 
+        self._ignore_next_press = False
         self._listener = Listener(on_press=self._on_press)
         self._listener.start()
 
@@ -25,13 +26,21 @@ class KeyHolder(QObject):
         captured_key = None
         should_toggle = False
         with self._lock:
+            if self._ignore_next_press:
+                self._ignore_next_press = False
+                return
+
             if self._capturing:
                 self._capturing = False
+                # capture all key presses but ESC
                 if key != Key.esc:
                     captured_key = key
-            elif key == self._toggle_key:
+            
+            # toggle key press by toggle key or hold key if already running
+            elif key == self._toggle_key or (self._running and key == self._hold_key):
                 self._running = not self._running
                 if self._running:
+                    self._ignore_next_press = True
                     self._controller.press(self._hold_key)
                 else:
                     self._controller.release(self._hold_key)
@@ -75,6 +84,7 @@ class KeyHolder(QObject):
                 self._controller.release(self._hold_key)
         self.running_changed.emit(self._running)
 
+    # function to stop key holder
     def stop(self):
         with self._lock:
             if self._running:
