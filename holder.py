@@ -1,6 +1,6 @@
 from threading import Lock
 from PySide6.QtCore import QObject, Signal
-from pynput.keyboard import Listener, Controller, Key, KeyCode
+from pynput.keyboard import Listener, Controller, Key
 
 from config import HOLD_KEY, TOGGLE_KEY
 
