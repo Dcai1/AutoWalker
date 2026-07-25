@@ -28,8 +28,6 @@ class AutoHolderWindow(QWidget):
         self.setWindowTitle(WINDOW_TITLE)
         # change placeholder when actual icon is acquired
         self.setWindowIcon(create_app_icon())
-        
-        self.setStyleSheet("background-color: #f0f0f0;")
 
         self._setup_ui()
         self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -73,6 +71,9 @@ class AutoHolderWindow(QWidget):
 
         self.start_stop_btn = QPushButton()
         self.start_stop_btn.setFixedHeight(36)
+        
+        # Set the background color of the button to grey
+        self.start_stop_btn.setStyleSheet("background-color: #666666;")
 
         layout.addWidget(self.start_stop_btn)
 
@@ -82,10 +83,16 @@ class AutoHolderWindow(QWidget):
         self.msg_label.setAlignment(Qt.AlignCenter)
         self.msg_label.setWordWrap(True)
         self.msg_label.setStyleSheet("color: #cc0000; font-size: 11px;")
+        
+        # Set the background color of the message label to black
+        self.msg_label.setStyleSheet("background-color: #000000; color: #cc0000; font-size: 11px;")
 
         self.status_label = QLabel()
         self.status_label.setStyleSheet("color: gray; font-size: 11px;")
         self.status_label.setAlignment(Qt.AlignCenter)
+        
+        # Set the background color of the status label to black
+        self.status_label.setStyleSheet("background-color: #000000; color: gray; font-size: 11px;")
 
         admin_hint = QLabel(
             "If the keys aren't working in-game, try running this program as an Administrator."
