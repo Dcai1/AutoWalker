@@ -94,7 +94,7 @@ class AutoHolderWindow(QWidget):
         self.status_label.setStyleSheet("color: gray; font-size: 11px;")
 
         admin_hint = QLabel(
-            "If the keys aren't working in-game, try running this program as an Administrator."
+            "If the keys aren't working in-game or the application is behaving strangely, try running this program as an Administrator."
         )
         admin_hint.setStyleSheet("color: gray; font-size: 11px;")
         admin_hint.setAlignment(Qt.AlignCenter)
