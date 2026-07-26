@@ -26,7 +26,6 @@ class AutoHolderWindow(QWidget):
         self._capture_target = None
 
         self.setWindowTitle(WINDOW_TITLE)
-        # change placeholder when actual icon is acquired
         self.setWindowIcon(create_app_icon())
 
         self._setup_ui()
