@@ -5,6 +5,6 @@ from pynput.keyboard import Key, KeyCode
 
 HOLD_KEY = KeyCode.from_char('w')
 TOGGLE_KEY = Key.f6
-WINDOW_TITLE = "Auto Holder v1.0.3"
+WINDOW_TITLE = "Auto Holder v1.0.4"
 WINDOW_WIDTH = 500
 WINDOW_HEIGHT = 300
